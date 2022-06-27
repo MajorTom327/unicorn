@@ -3,6 +3,9 @@ NAME=libunicorn
 SRC_PATH = ./src/
 
 SRC_NAME = \
+	runner/uni_runner_add_suite.c\
+	runner/uni_runner_new.c\
+	runner/uni_runner_run.c\
 	suite/uni_suite_add_test.c\
 	suite/uni_suite_new.c\
 	test/uni_test_new.c

@@ -20,8 +20,15 @@ typedef struct s_uni_suite {
   char *name;
 
   t_uni_test *tests;
+  struct s_unit_suite *next;
 } t_uni_suite;
 
+typedef struct s_uni_runner {
+  t_uni_suite *suites;
+} t_uni_runner;
+
+// * Runner
+t_uni_runner *uni_runner_new();
 
 // * Suites
 t_uni_suite *uni_suite_new(char *name);
