@@ -7,7 +7,7 @@ t_uni_suite *uni_suite_add_test(t_uni_suite *suite, t_uni_test *test) {
   } else {
     t_uni_test *current = suite->tests;
     while (current->next != NULL) {
-      current = current->next;
+      current = (t_uni_test *)current->next;
     }
     current->next = test;
   }

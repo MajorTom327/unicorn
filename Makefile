@@ -8,7 +8,10 @@ SRC_NAME = \
 	runner/uni_runner_run.c\
 	suite/uni_suite_add_test.c\
 	suite/uni_suite_new.c\
-	test/uni_test_new.c
+	suite/uni_suite_run.c\
+	test/uni_test_new.c\
+	test/uni_test_run.c\
+	view/uni_view_result.c\
 
 OBJ_PATH=./obj/
 INC_PATH=./include
