@@ -60,7 +60,8 @@ int main(void)
   t_uni_runner *runner = uni_runner_new();
   uni_runner_add_suite(runner, suite_isalpha());
   uni_runner_run(runner);
-  uni_view_result(runner);
+  uni_view_result(runner); // View the result in the console
+  uni_xml_reporter("./test.xml", runner); // Create a XML report
 }
 ```
 

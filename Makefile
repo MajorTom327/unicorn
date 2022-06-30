@@ -12,6 +12,9 @@ SRC_NAME = \
 	test/uni_test_new.c\
 	test/uni_test_run.c\
 	reporter/uni_view_result.c\
+	reporter/xml/uni_xml_reporter.c\
+	reporter/xml/uni_xml_suite.c\
+	reporter/xml/uni_xml_test.c
 
 OBJ_PATH=./obj/
 INC_PATH=./include
