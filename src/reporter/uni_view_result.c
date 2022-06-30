@@ -1,9 +1,11 @@
 #include <unicorn.h>
 #include <stdio.h>
+#include <stdlib.h>
 
 void uni_view_suite(const t_uni_suite *suite);
 void uni_view_test(const t_uni_test *test);
 const char  *uni_test_result_to_string(t_test_result result);
+char *uni_test_duration_to_string(unsigned long duration);
 
 void uni_view_result(const t_uni_runner *runner) {
   t_uni_suite *current = runner->suites;
@@ -40,7 +42,12 @@ void uni_view_test(const t_uni_test *test) {
       color = 37;
       break;
   }
-  printf("  \033[%dm⚡️ %s:\033[0m %s\n", color ,test->name, uni_test_result_to_string(test->result));
+  printf("  \033[%dm⚡️ %s:\033[0m %s %s\n",
+    color,
+    test->name,
+    uni_test_result_to_string(test->result),
+    uni_test_duration_to_string(test->duration)
+  );
 }
 
 const char  *uni_test_result_to_string(t_test_result result) {
@@ -56,4 +63,16 @@ const char  *uni_test_result_to_string(t_test_result result) {
     default:
       return "\033[34mUNKNOWN\033[0m";
   }
+}
+
+char *uni_test_duration_to_string(unsigned long duration) {
+  char *s = NULL;
+  if (duration < 100L) {
+    asprintf(&s, "\033[32m(%lu ms)\033[0m", duration);
+  } else if (duration < 500L) {
+    asprintf(&s, "\033[33m(%lu ms)\033[0m", duration);
+  } else {
+    asprintf(&s, "\033[31m(%lu ms)\033[0m", duration);
+  }
+  return s;
 }

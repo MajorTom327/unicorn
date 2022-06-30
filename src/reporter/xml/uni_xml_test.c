@@ -13,6 +13,10 @@ const char*uni_get_status_test(t_uni_test *test) {
 }
 
 int uni_xml_test(FILE *fd, t_uni_test *test) {
-  fprintf(fd, "    <testcase name=\"%s\" status=\"%s\" />\n", test->name, uni_get_status_test(test));
+  fprintf(fd, "    <testcase name=\"%s\" status=\"%s\" duration=\"%lu\" />\n",
+    test->name,
+    uni_get_status_test(test),
+    test->duration
+  );
   return 0;
 }

@@ -12,6 +12,7 @@ typedef enum e_test_result {
 
 typedef struct s_uni_test {
   char *name;
+  unsigned long duration;
   int (*func)();
 
   t_test_result result;
