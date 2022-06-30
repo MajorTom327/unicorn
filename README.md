@@ -93,3 +93,21 @@ libft
 
 - The libft's Makefile only build the libft.a
 - The tests's Makefile build a executable for testing the lib
+
+## XML Report
+You can add a XML report of the testsBy adding a call to the xml export function
+
+```C
+uni_xml_reporter("./test.xml", runner);
+```
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="isalpha" duration="1">
+    <testcase name="a shoud be alpha" status="passed" duration="1" />
+    <testcase name="1 shoud be alpha" status="failed" duration="0" />
+  </testsuite>
+</testsuites>
+
+```

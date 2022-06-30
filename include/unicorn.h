@@ -22,6 +22,8 @@ typedef struct s_uni_test {
 typedef struct s_uni_suite {
   char *name;
 
+  unsigned long duration;
+
   t_uni_test *tests;
   struct s_uni_suite *next;
 } t_uni_suite;
