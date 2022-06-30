@@ -12,10 +12,16 @@ A basic C unit testing framework
 - Group tests per suite
 - Simple result
 
+## Build
+
+```bash
+make
+```
+
 
 ## Usage/Examples
 
-`suite_isalpha.c`
+> suite_isalpha.c
 ```C
 #include "test.h"
 #include <libft.h>
@@ -44,7 +50,7 @@ int test_isalpha_1() {
 }
 ```
 
-`main.c`
+> main.c
 ```C
 #include "test.h"
 #include <unicorn.h>
@@ -57,3 +63,32 @@ int main(void)
   uni_view_result(runner);
 }
 ```
+
+The executable result should look like this:
+![result](screen/result.png)
+
+You have to link the librairie to your test project.
+
+In the exemple case, the projet tree look like this:
+```
+libft
+|_ Makefile
+|_ src
+| |_ ft_isalpha.c
+|_ include
+| |_ libft.h
+|_ tests
+  |_ Makefile
+  |_ unicorn
+  | |_ libunicorn.a
+  | |_ include
+  |   |_ unicorn.h
+  |_ src
+  | |_ suite_isalpha.c
+  | |_ main.c
+  |_ include
+    |_ test.h
+```
+
+- The libft's Makefile only build the libft.a
+- The tests's Makefile build a executable for testing the lib
