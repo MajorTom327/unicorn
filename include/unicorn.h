@@ -53,6 +53,7 @@ void uni_view_result(const t_uni_runner *runner);
 int uni_xml_reporter(const char *filepath, t_uni_runner *runner);
 int uni_xml_suite(FILE* fd, t_uni_suite *suite);
 int uni_xml_test(FILE* fd, t_uni_test *test);
+int uni_get_final_result(const t_uni_runner *runner);
 
 
 #endif
