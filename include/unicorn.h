@@ -13,6 +13,12 @@ typedef enum e_test_result {
   TEST_RESULT_SKIP,
 } t_test_result;
 
+typedef struct s_uni_report {
+  int test_count;
+  int test_passed;
+  int test_failed;
+} t_uni_report;
+
 typedef struct s_uni_test {
   char *name;
   unsigned long duration;
@@ -57,6 +63,10 @@ int uni_xml_reporter(const char *filepath, t_uni_runner *runner);
 int uni_xml_suite(FILE* fd, t_uni_suite *suite);
 int uni_xml_test(FILE* fd, t_uni_test *test);
 int uni_get_final_result(const t_uni_runner *runner);
+
+// * Report
+t_uni_report *uni_suite_report(t_uni_suite *suite);
+t_uni_report *uni_runner_report(t_uni_runner *runner);
 
 
 #endif

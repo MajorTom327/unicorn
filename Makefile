@@ -15,7 +15,9 @@ SRC_NAME = \
 	reporter/xml/uni_xml_reporter.c\
 	reporter/xml/uni_xml_suite.c\
 	reporter/xml/uni_xml_test.c\
-	reporter/uni_get_final_result.c
+	reporter/uni_get_final_result.c\
+	report/uni_runner_report.c\
+	report/uni_suite_report.c
 
 OBJ_PATH=./obj/
 INC_PATH=./include
