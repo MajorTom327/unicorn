@@ -3,6 +3,9 @@
 
 #include <stdio.h>
 
+#define IS_TRUTHY(x) ((x) != 0)
+#define IS_FALSY(x) ((x) == 0)
+
 typedef enum e_test_result {
   TEST_RESULT_PENDING,
   TEST_RESULT_OK,
